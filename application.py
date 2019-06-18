@@ -5,14 +5,13 @@ import requests
 
 def parse_json(json_object):
 
-    # {"slip": {"advice":"If you need cheering up, try searching online for photos of kittens.","slip_id":"47"}}
     parsed_json = json.loads(json_object)
     periods = parsed_json['properties']['periods']
     count = len(periods)
     count -= 1
     while count > -1:
         #print count
-        print periods[count]
+        print str(periods[count])
         count -= 1
     return count
 
@@ -38,7 +37,7 @@ def main():
     print api_url
     print api_status
     result = parse_json(json_object)
-    print result
+    #print result
 
 if __name__=="__main__":
     sys.exit(main())
